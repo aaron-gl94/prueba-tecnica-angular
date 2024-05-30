@@ -5,16 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { FooterComponent } from './components/shared/footer/footer.component';
-import { NotFoundComponent } from './components/shared/not-found/not-found.component';
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
-
+import { FooterComponent } from './shared/footer/footer.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    NotFoundComponent,
     NavbarComponent
   ],
   imports: [
