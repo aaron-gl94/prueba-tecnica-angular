@@ -60,3 +60,18 @@ A continuación los requisitos del proyecto (objetivos):
     * o. usar al menos un efecto CSS y una KeyFrame
     
 Se deberá considerar lo siguiente, el proyecto puede correr en local pero si se despliega en algún servicio en la nube será considerado un plus al proyecto. También debe considerarse que se cuestionara de manera técnica las características que se solicitaron.
+
+# Docker
+
+Para crear el dist, la imagen y el contenedor:
+
+* Generar el build (./dist) del proyecto de angular:
+    ` ng build --configuration production ` o ` ng build --configuration development `
+
+* Generar la imagen de docker:
+    ` docker build -t prueba-angular:lastest . `
+
+* Generar y correr el contenedor:
+    ` docker run -d -p 80:80 prueba-angular `
+
+
