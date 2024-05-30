@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { HomePageLoginComponent } from 'src/app/components/home-page-login/home-page-login.component';
-import { HomePageSigninComponent } from 'src/app/components/home-page-signin/home-page-signin.component';
+import { HomeLoginComponent } from 'src/app/components/home-login/home-login.component';
+import { HomeSigninComponent } from 'src/app/components/home-signin/home-signin.component';
 
 @Component({
     selector: 'home-page',
@@ -8,8 +8,8 @@ import { HomePageSigninComponent } from 'src/app/components/home-page-signin/hom
     styleUrls: ['./home-page.component.css'],
     standalone: true,
     imports: [
-      HomePageLoginComponent,
-      HomePageSigninComponent
+      HomeLoginComponent,
+      HomeSigninComponent
     ]
 })
 export class HomePageComponent {
