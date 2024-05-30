@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { CartPageBillComponent } from 'src/app/components/cart-page-bill/cart-page-bill.component';
-import { CartPageShoppingComponent } from 'src/app/components/cart-page-shopping/cart-shopping.component';
+import { Router } from '@angular/router';
+import { CartBillComponent } from 'src/app/components/cart-bill/cart-bill.component';
+import { CartShoppingComponent } from 'src/app/components/cart-shopping/cart-shopping.component';
 
 @Component({
   selector: 'app-cart-page',
@@ -8,10 +9,15 @@ import { CartPageShoppingComponent } from 'src/app/components/cart-page-shopping
   styleUrls: ['./cart-page.component.css'],
   standalone: true,
   imports: [
-    CartPageBillComponent,
-    CartPageShoppingComponent
+    CartBillComponent,
+    CartShoppingComponent
   ]
 })
 export class CartPageComponent {
 
+  constructor(private router: Router) {}
+  
+  public goToStore(): void {
+    this.router.navigate(['store']);
+  }
 }

@@ -1,1 +1,21 @@
-<p>cart-page works!</p>
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-md">
+            <button (click)="goToStore()"  class="btn btn-sm btn-warning">
+                <i class="bi bi-arrow-left"></i>
+                Regresar a la tienda
+            </button>
+        </div>
+
+    </div>
+
+    <div class="row pt-3">
+        <div class="col-md-8">
+            <cart-shopping></cart-shopping>
+        </div>
+
+        <div class="col-md-4">
+            <cart-bill></cart-bill>
+        </div>
+    </div>
+</div>
