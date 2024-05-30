@@ -1,0 +1,30 @@
+<div class="card shadow">
+    <div class="card-body">
+
+        <p>Busqueda por:</p>
+
+        <div class="form-group">
+            <label for="categories">Categorias</label>
+            <select (change)="sendCategory(category.value)" #category name="categories" id="categories" class="form-select form-select-sm">
+                <option value="">Seleccionar</option>
+                <option *ngFor="let category of categoriesList" value="{{category}}">{{ category | uppercase}}</option>
+            </select>
+        </div>
+
+        <hr class="hr">
+
+        <div class="d-grid gap-2">
+            <button (click)="sendCategory('')" class="btn btn-success" type="button">
+                <i class="bi bi-eye"></i>
+                Ver todo
+            </button>
+        </div>
+        <div class="d-grid gap-2 pt-1">
+            <button (click)="sendCategory('clean')" class="btn btn-danger" type="button">
+                <i class="bi bi-trash"></i>
+                Limpiar
+            </button>
+        </div>
+
+    </div>
+</div>
