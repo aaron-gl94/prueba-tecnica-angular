@@ -1,0 +1,17 @@
+.error-animation {
+    animation: pulso 3s ease-in-out infinite;
+}
+
+@keyframes pulso {
+    from {
+        transform: scale(1.5);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.5);
+    }
+}
