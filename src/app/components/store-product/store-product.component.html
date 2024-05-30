@@ -1,0 +1,152 @@
+
+
+<div class="container pt-5">
+
+    <div *ngIf="alert" class="row">
+        <div class="col-md">
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">
+                    <i class="bi bi-bag-plus"></i>&nbsp;&nbsp;¡Bien hecho!
+                </h4>
+                <hr>
+
+                <div class="row bw justify-content-between">
+                    <div class="col-md-6">
+                        Se ha agreado un nuevo producto a tu carro de compras.
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <button (click)="goToProdCart()" type="button" class="btn btn-warning">
+                            <i class="bi bi-cart"></i>
+                            Ir al carro
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-between">
+        <div class="col-md">
+            <button (click)="goToStore()"  class="btn btn-sm btn-warning">
+                <i class="bi bi-arrow-left"></i>
+                Regresar a la tienda
+            </button>
+        </div>
+        <div class="col-md text-end">
+            <button (click)="goToProdCart()" type="button" class="btn btn-sm btn-warning">
+                <i class="bi bi-cart"></i>
+                Ir al carro
+                <i class="bi bi-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="col-md pt-3">
+
+        <ng-container *ngIf="product && loader">
+            <div class="card">
+                <div class="card-body text-center p-5">
+                    <h1 class="card-title">Se esta procesando la solicitud...</h1>
+                    <h5 class="card-title">
+                        ¡Agregando al carro de compras!
+                    </h5>
+                    <p>
+                        Espere un momento mientras se registra su producto.
+                    </p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    
+        <ng-container *ngIf="product && !loader;">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row pt-5">
+                        <div class="col-md-2">
+                            <img src="{{product.image}}" class="p-3 rounded mx-auto d-block" alt="{{product.title}}" width="200px">
+                        </div>
+    
+                        <div class="col-md">
+                            <h3>{{product.title}}</h3>
+    
+                            <hr class="hr">
+    
+                            <div class="row">
+                                <div class="col-sm">
+                                    <p>
+                                        <strong>Descripción:</strong><br>
+                                        {{product.description}}
+                                    </p>
+                                    <p>
+                                        <strong>Categoria:</strong><br>
+                                        {{product.category  | uppercase}}
+                                    </p>
+                                    <strong>Precio:</strong><br>
+                                    <h4 class="card-title">
+                                        {{product.price | currency}}
+                                    </h4>
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="text-end">
+                                    <small>Calificado por: <strong>{{product.rating.count}} clientes </strong></small>
+                                </div>
+                            </div>
+                            <hr class="hr">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row g-3 align-items-center">
+                                        <div class="col-auto">
+                                            <label for="quantity" class="col-form-label">Cantidad:</label>
+                                        </div>
+                                        <div class="col-auto">
+                                            <input [(ngModel)]="quantity" type="number" id="quantity" class="form-control" min="1" max="5" value="1">
+                                        </div>
+                                        <div class="col-auto">
+                                            <span id="quantity" class="form-text">
+                                                Debe seleccionar al menos 1 item.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col text-end">    
+                                    <button (click)="saveProdToCart()" type="button" class="btn btn-info">
+                                        <i class="bi bi-cart-plus"></i>
+                                        Agregar
+                                    </button>
+                                </div>
+                            </div>
+    
+                            <!-- <star-rating [rating]="product.rating.rate"></star-rating> -->
+    
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        
+        <ng-container *ngIf="!product">    
+            <div class="card">
+                <div class="card-body text-center">
+                    <h2 class="card-title">Ningún producto ha sido seleccionado...</h2>
+                    <p>
+                        Regresa a la tienda para ver otros productos...
+                    </p>
+                    <button (click)="goToStore()" class="btn btn btn-warning">
+                        <i class="bi bi-arrow-left"></i>
+                        Regresar a la tienda
+                    </button>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+
+
+</div>
+
