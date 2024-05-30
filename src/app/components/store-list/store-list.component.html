@@ -1,0 +1,54 @@
+<div class="container pb-5">
+    <div class="row">
+        <div class="col-md">
+
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="row">
+                        <ng-container *ngIf="productList.length else noProducts">
+                            <div *ngFor="let product of productList" class="col-sm-3">
+                                <div class="card mb-3 vh-10">
+                                    <div class="text-center p-2">
+                                        <img src="{{product.image}}" class="card-img-top img-fluid" alt="{{product.title}}">
+                                    </div>
+                                    
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{product.title | slice:0:10}}...</h5>
+                                        <p class="card-text">{{product.description | slice:0:50}}...</p>
+                                        <hr class="hr">
+                                        <p class="card-text text-sm">
+                                            <strong>
+                                                {{product.category | uppercase}}
+                                            </strong>
+                                        </p>
+
+                                        <div class="text-center">
+                                            <h4 class="card-title">{{product.price | currency}}</h4>
+                                        </div>
+
+                                        <div class="d-grid gap-2">
+                                            <button (click)="viewDetail(product.id)" class="btn btn-sm btn-warning">
+                                                Ver Producto
+                                                <i class="bi bi-arrow-up-right-square"></i>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </ng-container>
+
+                        <ng-template #noProducts>
+                            <div class="text-center">
+                                <strong>Sin productos disponibles</strong>
+                            </div>
+                        </ng-template>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

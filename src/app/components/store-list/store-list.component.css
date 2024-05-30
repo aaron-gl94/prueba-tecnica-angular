@@ -1,0 +1,5 @@
+img {
+    width: 200px;
+    height: 200px;
+    /* Mantiene la relación de aspecto y cubre el espacio disponible */
+}
