@@ -1,1 +1,28 @@
-<p>store-page-component works!</p>
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col-md">
+            <h1 class="title">
+                ¡Nuevos productos disponibles! 
+            </h1>
+        </div>
+        <div class="col-md text-end pt-2">
+            <button (click)="goToProdsCart()" class="btn btn-warning">
+                <i class="bi bi-cart"></i>
+                Ir al Carro
+                <i class="bi bi-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="row pt-2">
+        <div class="col-md-2">
+            <store-form></store-form>
+        </div>
+
+        <div class="col-md">
+            <store-list></store-list>
+        </div>
+    </div>
+</div>

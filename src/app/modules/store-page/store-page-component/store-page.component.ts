@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { StorePageFormComponent } from 'src/app/components/store-page-form/store-page-form.component';
-import { StorePageListComponent } from 'src/app/components/store-page-list/store-page-list.component';
+import { Router } from '@angular/router';
+import { StoreFormComponent } from 'src/app/components/store-form/store-form.component';
+import { StoreListComponent } from 'src/app/components/store-list/store-list.component';
 
 @Component({
   selector: 'store-page',
@@ -8,10 +9,16 @@ import { StorePageListComponent } from 'src/app/components/store-page-list/store
   styleUrls: ['./store-page.component.css'],
   standalone: true,
   imports: [
-    StorePageFormComponent,
-    StorePageListComponent
+    StoreFormComponent,
+    StoreListComponent
   ]
 })
 export class StorePageComponent {
+
+  constructor(private router:Router) {}
+
+  public goToProdsCart():void {
+    this.router.navigate(['cart'])
+  }
 
 }
