@@ -45,7 +45,3 @@ Thumbs.db
 # Environments
 src/environments/environment.ts
 src/environments/environment.development.ts
-
-#Docker
-DockerFile
-.dockerignore
