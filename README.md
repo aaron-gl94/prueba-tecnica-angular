@@ -74,4 +74,3 @@ Para crear el dist, la imagen y el contenedor:
 * Generar y correr el contenedor:
     ` docker run -d -p 80:80 prueba-angular `
 
-
