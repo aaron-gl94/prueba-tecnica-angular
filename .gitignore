@@ -45,3 +45,7 @@ Thumbs.db
 # Environments
 src/environments/environment.ts
 src/environments/environment.development.ts
+
+#Sonar
+sonar-project.properties
+.github/workflows/build.yml
